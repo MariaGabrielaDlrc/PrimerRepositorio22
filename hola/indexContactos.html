@@ -1,0 +1,173 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Contacto</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-gray-50">
+
+  <!-- NAVBAR -->
+  <nav class="navbar fixed inset-x-0 top-0 z-50 bg-transparent transition-colors duration-300">
+    <div class="container mx-auto flex items-center justify-between px-4 py-4">
+      <!-- Logo -->
+      <a href="index.html" class="flex items-center">
+        <img src="images/images/somos/logos/logo-02.png" alt="Logo" class="h-24">
+      </a>
+
+      <!-- Botón móvil -->
+      <button class="lg:hidden text-white text-2xl" id="menu-btn" aria-label="Abrir menú">
+        <i class="fas fa-bars"></i>
+      </button>
+
+      <!-- Links -->
+      <div id="menu" class="hidden lg:flex flex-col lg:flex-row items-center gap-6">
+        <ul class="flex flex-col lg:flex-row gap-4 text-lg">
+          <li><a href="indexInicio.html" class="nav-link font-semibold transition-colors duration-300 text-white hover:text-emerald-300 drop-shadow-[0_2px_2px_rgba(0,0,0,0.4)]">Inicio</a></li>
+          <li><a href="indexSomos.html" class="nav-link font-semibold transition-colors duration-300 text-white hover:text-emerald-300 drop-shadow-[0_2px_2px_rgba(0,0,0,0.4)]">Quienes somos</a></li>
+          <li><a href="indexServicios.html" class="nav-link font-semibold transition-colors duration-300 text-white hover:text-emerald-300 drop-shadow-[0_2px_2px_rgba(0,0,0,0.4)]">Servicios</a></li>
+          <li><a href="indexSomos.html" class="nav-link font-semibold transition-colors duration-300 text-emerald-600 hover:text-emerald-500 drop-shadow-[0_2px_2px_rgba(0,0,0,0.4)]">Contáctanos</a></li>
+        </ul>
+
+        <!-- Redes -->
+        <div class="flex flex-col lg:flex-row items-center gap-4 mt-4 lg:mt-0">
+          <div class="flex gap-3 text-xl">
+            <a href="https://x.com/kiehls?lang=es" target="_blank" class="social-link transition-colors duration-300 text-white hover:text-emerald-300"><i class="fab fa-twitter"></i></a>
+            <a href="https://www.facebook.com/KiehlsColombia/?locale=es_LA" target="_blank" class="social-link transition-colors duration-300 text-white hover:text-emerald-300"><i class="fab fa-facebook"></i></a>
+            <a href="https://www.instagram.com/kiehls" target="_blank" class="social-link transition-colors duration-300 text-white hover:text-emerald-300"><i class="fab fa-instagram"></i></a>
+          </div>
+        </div>
+
+        <!-- Buscador -->
+        <form class="flex items-center gap-3">
+          <input type="search" placeholder="escribe algo..." class="px-4 py-2 rounded-lg outline-none text-gray-700 shadow w-60" />
+          <button type="submit" class="bg-emerald-500 text-white px-5 py-2 font-semibold rounded-lg hover:bg-emerald-600 transition duration-300 shadow">Buscar</button>
+        </form>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <header class="relative flex items-end min-h-[60vh] pt-28 pb-20 bg-cover bg-center"
+    style="background-image:url('images/images/home/slider.jpg')">
+    <div class="max-w-7xl mx-auto px-6">
+      <h1 class="text-4xl md:text-5xl font-semibold text-white drop-shadow-[0_2px_2px_rgba(0,0,0,0.4)]">Contáctanos</h1>
+      <p class="text-lg text-gray-100 drop-shadow-[0_2px_2px_rgba(0,0,0,0.4)]">Cuéntanos sobre tu proyecto y te responderemos a la brevedad.</p>
+    </div>
+  </header>
+
+  <!-- CONTENIDO -->
+  <main class="pb-12">
+    <div class="max-w-7xl mx-auto px-6 mt-12 grid grid-cols-1 lg:grid-cols-12 gap-6">
+
+      <!-- Info -->
+      <aside class="lg:col-span-4 space-y-4">
+        <div class="bg-white shadow rounded p-4 flex gap-3 transition-shadow duration-300 hover:shadow-lg">
+          <i class="fa-solid fa-phone text-green-600 text-lg"></i>
+          <div>
+            <h6 class="font-semibold">Teléfono</h6>
+            <p class="text-sm">(+51) 999 999 999</p>
+          </div>
+        </div>
+
+        <div class="bg-white shadow rounded p-4 flex gap-3 transition-shadow duration-300 hover:shadow-lg">
+          <i class="fa-solid fa-envelope text-green-600 text-lg"></i>
+          <div>
+            <h6 class="font-semibold">Email</h6>
+            <p class="text-sm">contacto@tuempresa.com</p>
+          </div>
+        </div>
+
+        <div class="bg-white shadow rounded p-4 flex gap-3 transition-shadow duration-300 hover:shadow-lg">
+          <i class="fa-solid fa-location-dot text-green-600 text-lg"></i>
+          <div>
+            <h6 class="font-semibold">Dirección</h6>
+            <p class="text-sm">Cl. 90 #46-112</p>
+          </div>
+        </div>
+      </aside>
+
+      <!-- Formulario -->
+      <section class="lg:col-span-8">
+        <form class="bg-white shadow rounded p-6 grid grid-cols-1 md:grid-cols-2 gap-4 transition-shadow duration-300 hover:shadow-lg">
+          <div>
+            <label class="block text-sm font-medium">Nombre</label>
+            <input type="text" placeholder="Tu nombre" class="w-full mt-1 p-2 border rounded focus:ring-2 focus:ring-green-600">
+          </div>
+          <div>
+            <label class="block text-sm font-medium">Email</label>
+            <input type="email" placeholder="tucorreo@dominio.com" class="w-full mt-1 p-2 border rounded focus:ring-2 focus:ring-green-600">
+          </div>
+          <div>
+            <label class="block text-sm font-medium">Teléfono</label>
+            <input type="tel" placeholder="+51 999 999 999" class="w-full mt-1 p-2 border rounded focus:ring-2 focus:ring-green-600">
+          </div>
+          <div>
+            <label class="block text-sm font-medium">Asunto</label>
+            <input type="text" placeholder="¿Cómo podemos ayudarte?" class="w-full mt-1 p-2 border rounded focus:ring-2 focus:ring-green-600">
+          </div>
+          <div class="md:col-span-2">
+            <label class="block text-sm font-medium">Mensaje</label>
+            <textarea rows="5" placeholder="Escribe tu mensaje..." class="w-full mt-1 p-2 border rounded focus:ring-2 focus:ring-green-600"></textarea>
+          </div>
+          <div class="md:col-span-2 flex justify-between items-center">
+            <label class="flex items-center space-x-2 text-sm">
+              <input type="checkbox" class="w-4 h-4 border-gray-300 rounded">
+              <span>Acepto la política de privacidad</span>
+            </label>
+            <button type="submit" class="bg-green-600 text-white px-6 py-2 rounded hover:bg-green-700">Enviar</button>
+          </div>
+        </form>
+      </section>
+    </div>
+
+    <!-- MAPA -->
+    <div class="max-w-7xl mx-auto mt-6 px-6">
+      <div class="rounded shadow overflow-hidden">
+        <iframe class="w-full h-[300px]" loading="lazy" style="border:0;" src="https://www.google.com/maps?q=Barranquilla,Colombia&output=embed"></iframe>
+      </div>
+    </div>
+  </main>
+
+  <!-- Script Navbar cambio -->
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const navbar = document.querySelector(".navbar");
+      const links = navbar.querySelectorAll("ul a, .fab");
+  
+      const setScrolled = (scrolled) => {
+        if (scrolled) {
+          navbar.classList.add("bg-white", "shadow-md");
+          navbar.classList.remove("bg-transparent");
+          links.forEach(el => {
+            el.classList.add("text-black");
+            el.classList.remove("text-white");
+          });
+        } else {
+          navbar.classList.add("bg-transparent");
+          navbar.classList.remove("bg-white", "shadow-md");
+          links.forEach(el => {
+            el.classList.add("text-white");
+            el.classList.remove("text-black");
+          });
+        }
+      };
+  
+      // Estado inicial
+      setScrolled(window.scrollY > 50);
+  
+      // Listener de scroll
+      window.addEventListener("scroll", () => {
+        setScrolled(window.scrollY > 80);
+      });
+    });
+  </script>
+
+  <!-- Font Awesome -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/js/all.min.js"></script>
+
+</body>
+</html>
