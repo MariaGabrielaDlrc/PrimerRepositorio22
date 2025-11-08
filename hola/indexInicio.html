@@ -1,0 +1,221 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Index Inicio</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script defer src="https://unpkg.com/alpinejs"></script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" rel="stylesheet" />
+</head>
+
+<body class="font-sans text-gray-900">
+
+  <!-- NAVBAR (idéntica a index.html) -->
+  <nav class="fixed top-0 left-0 w-full z-50 bg-transparent">
+    <div class="container mx-auto flex items-center justify-between px-4 py-4">
+      <!-- Logo -->
+      <a href="index.html" class="flex items-center">
+        <img src="images/images/somos/logos/logo-02.png" alt="Logo" class="h-24">
+      </a>
+
+      <!-- Botón móvil -->
+      <button class="lg:hidden text-white text-2xl" id="menu-btn">
+        <i class="fas fa-bars"></i>
+      </button>
+
+      <!-- Links -->
+      <div id="menu" class="hidden lg:flex flex-col lg:flex-row items-center gap-6">
+        <ul class="flex flex-col lg:flex-row gap-4 text-white text-lg">
+          <li><a href="indexInicio.html"
+              class="hover:text-green-400 text-green-600 font-semibold transition-colors duration-300 drop-shadow-[0_2px_2px_rgba(0,0,0,0.4)]">Inicio</a></li>
+          <li><a href="indexSomos.html" class="hover:text-green-400 transition-colors duration-300 drop-shadow-[0_2px_2px_rgba(0,0,0,0.4)]">Quienes somos</a>
+          </li>
+          <li><a href="indexServicios.html" class="hover:text-green-400 transition-colors duration-300 drop-shadow-[0_2px_2px_rgba(0,0,0,0.4)]">Servicios</a>
+          </li>
+          <li><a href="indexContactos.html" class="hover:text-green-400 transition-colors duration-300 drop-shadow-[0_2px_2px_rgba(0,0,0,0.4)]ine">Contáctanos</a>
+          </li>
+        </ul>
+
+        <!-- Redes -->
+        <div class="flex flex-col lg:flex-row items-center gap-4 mt-4 lg:mt-0">
+          <div class="flex gap-3 text-xl text-white">
+            <a href="https://x.com/kiehls?lang=es" target="_blank" class="hover:text-green-400">
+              <i class="fab fa-twitter"></i>
+            </a>
+            <a href="https://www.facebook.com/KiehlsColombia/?locale=es_LA" target="_blank"
+              class="hover:text-green-400">
+              <i class="fab fa-facebook"></i>
+            </a>
+            <a href="https://www.instagram.com/kiehls" target="_blank" class="hover:text-green-400">
+              <i class="fab fa-instagram"></i>
+            </a>
+          </div>
+        </div>
+
+
+
+        <!-- Buscador -->
+        <form class="flex items-center gap-3">
+          <input type="search" placeholder="escribe algo..."
+            class="px-4 py-2 rounded-lg outline-none text-gray-700 shadow w-60" />
+          <button type="submit"
+            class="bg-green-500 text-white px-5 py-2 font-semibold rounded-lg hover:bg-green-600 transition duration-300 shadow">
+            Buscar
+          </button>
+        </form>
+      </div>
+    </div>
+    </div>
+  </nav>
+
+<!-- HERO + SLIDES con fade -->
+<section class="relative min-h-screen bg-cover bg-center"
+  style="background-image:url('images/images/home/slider.jpg'); padding-top:6.5rem;">
+  <div class="container mx-auto">
+    <div class="max-w-5xl mx-auto relative" x-data="{
+      current: 1,
+      slides: 4,
+      showAI: false,
+      showBusiness: false,
+      showInnovation: false,
+      timer: null,
+      next() { this.current = this.current === this.slides ? 1 : this.current + 1 },
+      prev() { this.current = this.current === 1 ? this.slides : this.current - 1 },
+      start() { this.stop(); this.timer = setInterval(()=> this.next(), 6000) },
+      stop() { if (this.timer) clearInterval(this.timer) }
+    }" x-init="start()" @mouseenter="stop()" @mouseleave="start()">
+      <!-- Lienzo de slides -->
+      <div class="relative h-[520px] rounded-lg overflow-hidden">
+
+        <!-- SLIDE 1 -->
+        <div x-show="current === 1" x-transition.opacity.duration.700ms class="absolute inset-0">
+          <img src="./images/images/somos/downloads/ai-machine-deep-learning-neural-network-cyber-brain-concepto-de-tecnología-moderna-botón-robótico-presión-manual-d-render-210459659.jpg"
+            class="w-full h-full object-cover">
+          <div class="absolute inset-0 bg-gradient-to-r from-black/70 via-black/40 to-transparent"></div>
+          <div class="absolute inset-0 flex flex-col justify-center items-center text-center px-6">
+            <h5 class="text-3xl md:text-4xl font-extrabold text-white drop-shadow-lg mb-3">
+              Ofrecemos asesorías en <span class="text-blue-400">Inteligencia Artificial</span>
+            </h5>
+            <p class="text-lg md:text-xl text-gray-200 max-w-2xl mb-6">
+              Implementación de modelos, automatización de procesos y capacitación para equipos.
+            </p>
+            <button @click="showAI = !showAI"
+              class="bg-blue-500 hover:bg-blue-600 text-white font-medium px-6 py-3 rounded-full shadow-lg transition transform hover:scale-105">
+              Leer más...
+            </button>
+            <div x-show="showAI" x-transition
+              class="mt-4 bg-white/90 text-gray-800 p-4 rounded-xl shadow-lg max-w-lg">
+              Modelos de <span class="font-semibold">Machine Learning</span> y
+              <span class="font-semibold">Deep Learning</span> adaptados a tus necesidades.
+            </div>
+          </div>
+        </div>
+
+        <!-- SLIDE 2 -->
+        <div x-show="current === 2" x-transition.opacity.duration.700ms class="absolute inset-0">
+          <img src="./images/images/somos/downloads/business-software-1700x600.png"
+            class="w-full h-full object-cover">
+          <div class="absolute inset-0 bg-gradient-to-r from-black/70 via-black/40 to-transparent"></div>
+          <div class="absolute inset-0 flex flex-col justify-center items-center text-center px-6">
+            <h5 class="text-3xl md:text-4xl font-extrabold text-white drop-shadow-lg mb-3">
+              Ciencia de datos
+            </h5>
+            <p class="text-lg md:text-xl text-gray-200 max-w-2xl mb-6">
+              Analizamos toda la <span class="text-green-400 font-semibold">Big Data</span> de tu organización con
+              <span class="text-green-400 font-semibold">Deep Learning</span>.
+            </p>
+            <button
+              class="bg-green-500 hover:bg-green-600 text-white font-medium px-6 py-3 rounded-full shadow-lg transition transform hover:scale-105">
+              Análisis predictivo por Regresión Lineal
+            </button>
+          </div>
+        </div>
+
+        <!-- SLIDE 3 -->
+        <div x-show="current === 3" x-transition.opacity.duration.700ms class="absolute inset-0">
+          <img src="./images/images/somos/downloads/banner22-7-1700x600.jpg" class="w-full h-full object-cover">
+          <div class="absolute inset-0 bg-gradient-to-r from-black/70 via-black/40 to-transparent"></div>
+          <div class="absolute inset-0 flex flex-col justify-center items-center text-center px-6">
+            <h5 class="text-3xl md:text-4xl font-extrabold text-white drop-shadow-lg mb-3">
+              Excelencia <span class="text-orange-400">Empresarial</span>
+            </h5>
+            <p class="text-lg md:text-xl text-gray-200 max-w-2xl mb-6">
+              Aplicamos estrategias basadas en datos para <span class="font-semibold">impulsar el crecimiento</span>
+              y la innovación de tu negocio.
+            </p>
+            <button @click="showBusiness = !showBusiness"
+              class="bg-orange-500 hover:bg-orange-600 text-white font-medium px-6 py-3 rounded-full shadow-lg transition transform hover:scale-105">
+              Descubre más
+            </button>
+            <div x-show="showBusiness" x-transition
+              class="mt-4 bg-white/90 text-gray-800 p-4 rounded-xl shadow-lg max-w-lg">
+              Estrategias personalizadas de <span class="font-semibold">analítica de datos</span>,
+              <span class="font-semibold">transformación digital</span> y optimización de procesos.
+            </div>
+          </div>
+        </div>
+
+        <!-- SLIDE 4 -->
+        <div x-show="current === 4" x-transition.opacity.duration.700ms class="absolute inset-0">
+          <img
+            src="./images/images/somos/downloads/tecnologías-digitales-en-los-negocios-modernos-el-concepto-de-moderno-interfaz-virtual-con-gráficos-y-diagramas-visualización-223799750.jpg"
+            class="w-full h-full object-cover">
+          <div class="absolute inset-0 bg-gradient-to-r from-black/70 via-black/40 to-transparent"></div>
+          <div class="absolute inset-0 flex flex-col justify-center items-center text-center px-6">
+            <h5 class="text-3xl md:text-4xl font-extrabold text-white drop-shadow-lg mb-3">
+              Innovación <span class="text-purple-400">Constante</span>
+            </h5>
+            <p class="text-lg md:text-xl text-gray-200 max-w-2xl mb-6">
+              Transformamos tus procesos con <span class="font-semibold">soluciones inteligentes</span> y
+              <span class="font-semibold">tecnologías de vanguardia</span>.
+            </p>
+            <button @click="showInnovation = !showInnovation"
+              class="bg-purple-500 hover:bg-purple-600 text-white font-medium px-6 py-3 rounded-full shadow-lg transition transform hover:scale-105">
+              Ver más
+            </button>
+            <div x-show="showInnovation" x-transition
+              class="mt-4 bg-white/90 text-gray-800 p-4 rounded-xl shadow-lg max-w-lg">
+              Implementamos <span class="font-semibold">automatización</span>,
+              <span class="font-semibold">inteligencia artificial</span> y
+              <span class="font-semibold">transformación digital</span> para mantener tu empresa siempre un paso
+              adelante.
+            </div>
+          </div>
+        </div>
+
+        <!-- Controles -->
+        <div class="absolute inset-0 flex items-center justify-between px-4">
+          <button @click="prev()" class="bg-white rounded-full p-2 shadow z-10 pointer-events-auto"
+            aria-label="Anterior">
+            <i class="fas fa-chevron-left"></i>
+          </button>
+          <button @click="next()" class="bg-white rounded-full p-2 shadow z-10 pointer-events-auto"
+            aria-label="Siguiente">
+            <i class="fas fa-chevron-right"></i>
+          </button>
+        </div>
+
+        <!-- Indicadores -->
+        <div class="flex justify-center mt-4 space-x-2 relative z-20">
+          <template x-for="i in slides" :key="i">
+            <button @click="current = i" :class="{'bg-teal-600': current === i, 'bg-gray-400': current !== i}"
+              class="w-3 h-3 rounded-full" aria-label="Ir al slide"></button>
+          </template>
+        </div>
+      </div>
+    </div>
+</section>
+
+  <!-- JS menú móvil -->
+  <script>
+    const menuBtn = document.getElementById('menu-btn');
+    const menu = document.getElementById('menu');
+    menuBtn.addEventListener('click', () => {
+      menu.classList.toggle('hidden');
+    });
+  </script>
+</body>
+
+</html>
